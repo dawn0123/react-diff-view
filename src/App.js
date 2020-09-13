@@ -24,7 +24,13 @@ if(a === 10) {
 class Diff extends PureComponent {
   render = () => {
     return (
-      <ReactDiffViewer oldValue={oldCode} newValue={newCode} splitView={true} />
+      <ReactDiffViewer
+        oldValue={oldCode}
+        newValue={newCode}
+        splitView={true}
+        leftTitle={"oldCode"}
+        rightTitle={"newCode"}
+      />
     );
   };
 }

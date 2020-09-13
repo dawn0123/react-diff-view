@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { PureComponent } from "react";
+import ReactDiffViewer from "react-diff-viewer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const oldCode = `
+const a = 10
+const b = 10
+const c = () => console.log('foo')
+
+if(a > 10) {
+  console.log('bar')
 }
 
-export default App;
+console.log('done')
+`;
+const newCode = `
+const a = 10
+const boo = 10
+
+if(a === 10) {
+  console.log('bar')
+}
+`;
+
+class Diff extends PureComponent {
+  render = () => {
+    return (
+      <ReactDiffViewer oldValue={oldCode} newValue={newCode} splitView={true} />
+    );
+  };
+}
+
+export default Diff;

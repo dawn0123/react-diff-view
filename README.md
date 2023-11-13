@@ -1,10 +1,3 @@
-This repo is the sample code of the article below.
+# React Diff View
 
-https://qiita.com/t0yohei/items/2f13177a7d4ca121f912
-
-## How to start
-
-```
-$ yarn install
-$ yarn start
-```
+<img src="public/screen.png">
